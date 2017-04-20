@@ -68,7 +68,7 @@ abstract class Model
 
         $this->db->query("INSERT INTO {$this->table()} ({$keys}) VALUES ('{$values}')");
 
-        $this->db->lastInsertId();
+        return $this->db->lastInsertId();
     }
 
     /**
