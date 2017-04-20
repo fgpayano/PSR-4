@@ -38,7 +38,7 @@ abstract class Model
     {
         $values = array_values($fields);
 
-        $values = implode(',', $values);
+        $values = join("', '", $values);
 
         return $values;
     }
@@ -66,9 +66,7 @@ abstract class Model
 
         $keys = $this->getKeys($fields);
 
-        die("INSERT INTO {$this->table()} ({$keys}) VALUES ({$values})"); //parsear values, ejemplo agregar comillas simples
-
-        $this->db->query("INSERT INTO {$this->table()} ({$keys}) VALUES ({$values})");
+        $this->db->query("INSERT INTO {$this->table()} ({$keys}) VALUES ('{$values}')");
 
         $this->db->lastInsertId();
     }
