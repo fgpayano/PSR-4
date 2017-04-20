@@ -30,13 +30,4 @@ class Vote extends Model
         parent::__construct();
     }
 
-    /**
-     * @return int
-     */
-    public function count()
-    {
-        $votes = $this->all();
-
-        return $votes->rowCount();
-    }
 }

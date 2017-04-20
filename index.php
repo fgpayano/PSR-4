@@ -27,4 +27,5 @@ while ($account = $accounts->fetchObject())
     echo "<p>Vote #{$lastInsertId} from user {$name} was added. </p>";
 }
 
-echo "Votes: {$vote->count()}";
+echo "<p>Votes: {$vote->count()}</p>";
+echo "<p>Users: {$user->count()}</p>";

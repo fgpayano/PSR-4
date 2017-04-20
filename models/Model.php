@@ -70,4 +70,14 @@ abstract class Model
 
         $this->db->lastInsertId();
     }
+
+    /**
+     * @return int
+     */
+    public function count()
+    {
+        $results = $this->all();
+
+        return $results->rowCount();
+    }
 }
