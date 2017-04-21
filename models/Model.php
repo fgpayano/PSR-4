@@ -17,9 +17,9 @@ abstract class Model
     /**
      * Model constructor.
      */
-    public function __construct()
+    public function __construct($db)
     {
-        $this->db = DB::create();
+        $this->db = $db;
     }
 
     /**

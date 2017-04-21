@@ -25,9 +25,9 @@ class Vote extends Model
     /**
      * Ticket constructor.
      */
-    public function __construct()
+    public function __construct($db)
     {
-        parent::__construct();
+        parent::__construct($db);
     }
 
 }

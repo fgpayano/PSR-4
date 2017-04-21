@@ -5,13 +5,21 @@ include 'vendor/autoload.php';
 use \models\User;
 use \models\Vote;
 
-$user = (new User);
-$vote = (new Vote);
+$db = \models\DB::create();
+
+$user = (new User($db));
+$vote = (new Vote($db));
 
 $lastInsertId = $user->create([
     'name' => 'Valeria',
     'last_name' => 'Goris Payano',
-    'Unapc2015'
+    'password' => 'Unapc2015'
+]);
+
+$lastInsertId = $user->create([
+    'name' => 'Francis',
+    'last_name' => 'Goris Payano',
+    'password' => 'Unapc2015'
 ]);
 
 $accounts = $user->all();
