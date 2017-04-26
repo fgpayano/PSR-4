@@ -29,5 +29,4 @@ class Vote extends Model
     {
         parent::__construct($db);
     }
-
 }

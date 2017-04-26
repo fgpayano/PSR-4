@@ -24,7 +24,7 @@ $lastInsertId = $user->create([
 
 $accounts = $user->all();
 
-while ($account = $accounts->fetchObject())
+foreach ($accounts as $account)
 {
     $name = $account->name;
 

@@ -23,9 +23,17 @@ abstract class Model
     }
 
     /**
-     * @return \PDOStatement
+     * @return array
      */
     public function all()
+    {
+        return $this->queryAll()->fetchAll(\PDO::FETCH_CLASS);
+    }
+
+    /**
+     * @return \PDOStatement
+     */
+    protected function queryAll()
     {
         return $this->db->query("SELECT * FROM {$this->table()}");
     }
@@ -76,8 +84,6 @@ abstract class Model
      */
     public function count()
     {
-        $results = $this->all();
-
-        return $results->rowCount();
+        return $this->queryAll()->rowCount();
     }
 }
